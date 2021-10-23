@@ -1,0 +1,22 @@
+<!-- <div [ngClass]="'checkbox-price'">
+  <input type="checkbox">Low-High
+  <input type="checkbox">High-Low
+</div> -->
+<div [ngClass]="'item-container'">
+  <div [ngClass]="'parent-items'" *ngFor="let items of itemDetails">
+    <div [ngClass]="'items-img'" title="{{ items.category }}">
+      <img src="{{ items.image }}" alt="" width="135px" height="129.2px" />
+    </div>
+    <div [ngClass]="'items-descp'">
+      <div [ngClass]="'items-title'">{{ items.title }}</div>
+      <div [ngClass]="'items-price'">
+        <div [ngClass]="'items-star'">
+          <img src="assets/star-half.svg" alt="" />
+          {{ items.rating.rate }}
+          <span [ngClass]="'items-count'">({{ items.rating.count }})</span>
+        </div>
+        {{ items.price | currency }}
+      </div>
+    </div>
+  </div>
+</div>

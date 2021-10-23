@@ -1,0 +1,22 @@
+<div [ngClass]= "'main-checkbox'">
+        
+    <div [ngClass]= "'all-checkbox'">
+        <input type="checkbox"
+        [(ngModel)] = "propertyValue"
+        [value]=-1
+        [checked]=false
+        (change)="checking($event)"
+        >
+        Category
+    </div>
+    <div [ngClass]= "'checkbox'" *ngFor="let i of categories">
+        <li>
+            <input type="checkbox" [checked]="i.select"
+             (change)="checking($event)"
+             [value]="i.id"
+            >
+            {{i.name}}
+        </li>
+    </div>
+     
+</div>
